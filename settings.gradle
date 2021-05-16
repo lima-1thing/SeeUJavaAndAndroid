@@ -1,3 +1,5 @@
 rootProject.name = "SeeUJavaAndAndroid"
 include ':app'
 include ':app:calculator'
+include ':app:addressform'
+include ':businesscard'

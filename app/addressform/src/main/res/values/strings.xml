@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AddressForm</string>
+    <string-array name="states">
+        <item>New Jersey</item>
+        <item>New York</item>
+        <item>Maryland</item>
+    </string-array>
+</resources>
