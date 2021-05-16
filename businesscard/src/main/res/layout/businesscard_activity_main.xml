@@ -6,6 +6,11 @@
     android:orientation="vertical"
     tools:context=".BusinesscardActivityMainActivity">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight=".25" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -65,11 +70,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight=".25" />
 
     <Space
         android:layout_width="match_parent"
