@@ -9,25 +9,31 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class CounterMainActivity extends AppCompatActivity {
 
+    private int counter = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_counter_main);
+        TextView txtCounter = this.findViewById(R.id.txtCounter);
+        txtCounter.setText("" + this.counter);
+
     }
 
     public void onIncrease(View view) {
-        TextView counter = this.findViewById(R.id.txtCounter);
-        int c = Integer.parseInt(counter.getText().toString());
         EditText txtStep = this.findViewById(R.id.txtStep);
         int step = Integer.parseInt(txtStep.getText().toString());
-        counter.setText("" + (c + step));
+        this.counter += step;
+
+        TextView txtCounter = this.findViewById(R.id.txtCounter);
+        txtCounter.setText("" + this.counter);
     }
 
     public void onDecrease(View view) {
-        TextView counter = this.findViewById(R.id.txtCounter);
-        int c = Integer.parseInt(counter.getText().toString());
         EditText txtStep = this.findViewById(R.id.txtStep);
         int step = Integer.parseInt(txtStep.getText().toString());
-        counter.setText("" + (c - step));
+        this.counter -= step;
+
+        TextView txtCounter = this.findViewById(R.id.txtCounter);
+        txtCounter.setText("" + this.counter);
     }
 }

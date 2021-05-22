@@ -48,7 +48,7 @@
             android:ems="10"
             android:gravity="center|left"
             android:inputType="numberSigned"
-            android:text="0" />
+            android:text="1" />
 
         <TextView
             android:id="@+id/lblStep"
