@@ -26,6 +26,11 @@
             android:layout_weight=".5"
             android:orientation="vertical">
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
             <TextView
                 android:id="@+id/txtName"
                 android:layout_width="match_parent"
@@ -41,6 +46,11 @@
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
                 android:text="CEO" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
         </LinearLayout>
 

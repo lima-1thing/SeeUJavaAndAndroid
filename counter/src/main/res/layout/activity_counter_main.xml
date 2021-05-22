@@ -8,28 +8,63 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:layout_weight="1"
         android:gravity="center"
         android:orientation="horizontal">
 
-        <EditText
+        <TextView
+            android:id="@+id/lblCounter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="Counter:" />
+
+        <TextView
             android:id="@+id/txtCounter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="0" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="top"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/txtStep"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
             android:layout_weight="1"
             android:ems="10"
+            android:gravity="center|left"
             android:inputType="numberSigned"
             android:text="0" />
 
         <TextView
-            android:id="@+id/lblCounter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/lblStep"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
             android:layout_weight="1"
-            android:text="Counter:" />
+            android:gravity="center|right"
+            android:text="Step:" />
+
     </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,5 +91,10 @@
             android:onClick="onIncrease"
             android:text="+" />
     </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
 
 </LinearLayout>

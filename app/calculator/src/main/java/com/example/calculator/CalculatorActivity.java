@@ -15,12 +15,12 @@ public class CalculatorActivity extends AppCompatActivity {
     }
 
     public void onClick0(View view) {
-        TextView txtView = this.findViewById(R.id.textView);
+        TextView txtView = this.findViewById(R.id.txtCounter);
         txtView.setText("0");
     }
 
     public void onClick1(View view) {
-        TextView txtView = this.findViewById(R.id.textView);
+        TextView txtView = this.findViewById(R.id.txtCounter);
         txtView.setText("1");
     }
 }
