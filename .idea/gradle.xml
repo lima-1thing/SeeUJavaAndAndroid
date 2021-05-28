@@ -16,6 +16,9 @@
             <option value="$PROJECT_DIR$/app/calculator" />
             <option value="$PROJECT_DIR$/businesscard" />
             <option value="$PROJECT_DIR$/counter" />
+            <option value="$PROJECT_DIR$/dice" />
+            <option value="$PROJECT_DIR$/diceanimated" />
+            <option value="$PROJECT_DIR$/randomnumber" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
