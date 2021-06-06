@@ -1,4 +1,4 @@
-package com.example.javacollectionclasses;
+package com.example.shoppingcart;
 
 import android.content.Context;
 

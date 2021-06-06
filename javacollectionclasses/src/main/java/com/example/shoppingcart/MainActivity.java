@@ -1,6 +1,8 @@
-package com.example.javacollectionclasses;
+package com.example.shoppingcart;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +18,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        RecyclerView itemListView = this.findViewById(R.id.itemListLayout);
+        itemListView.setLayoutManager(new LinearLayoutManager(this.getApplicationContext()));
+
+        this.adapter = new ItemListAdapter(this.cart);
+        itemListView.setAdapter(adapter);
     }
 
     public void addNewItem(View view){
@@ -30,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         this.cart.add(item);
 
         this.updateTotal();
+        this.adapter.notifyDataSetChanged();
     }
 
     public void deleteFirstItem(View view){
@@ -38,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         }
         this.cart.remove(0);
         this.updateTotal();
+        this.adapter.notifyDataSetChanged();
     }
 
     private void updateTotal() {
@@ -46,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
         TextView txtTotal = this.findViewById(R.id.txtTotal);
 
         txtTotal.setText(String.format("Total:%.2f", total));
+
+        System.out.println(String.format("Total:%.2f", total));
     }
 
     private double calcTotal(){
@@ -78,6 +90,13 @@ public class MainActivity extends AppCompatActivity {
         // This bundle has also been passed to onCreate.
         this.cart = (ArrayList<HashMap<String, String>>) savedInstanceState.getSerializable("cart");
         this.updateTotal();
+
+        RecyclerView itemListView = this.findViewById(R.id.itemListLayout);
+        itemListView.setLayoutManager(new LinearLayoutManager(this.getApplicationContext()));
+
+        this.adapter = new ItemListAdapter(this.cart);
+        itemListView.setAdapter(adapter);
     }
     private ArrayList<HashMap<String, String>> cart = new ArrayList<>();
+    private ItemListAdapter adapter;
 }
