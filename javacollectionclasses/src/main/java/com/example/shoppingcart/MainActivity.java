@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addNewItem(View view){
+        view.clearFocus();
+
         EditText txtItemName = this.findViewById(R.id.txtItemName);
         EditText txtCount = this.findViewById(R.id.txtCount);
         EditText txtPrice = this.findViewById(R.id.txtPrice);

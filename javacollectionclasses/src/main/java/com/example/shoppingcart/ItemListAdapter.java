@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ViewHolder> {
+    private final ArrayList<HashMap<String, String>> cart;
     /**
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder).
@@ -40,18 +41,12 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ViewHo
             return txtPrice;
         }
 
-        public void setBackgroun(int color) {
+        public void setBackground(int color) {
             this.itemView.setBackgroundColor(color);
         }
 
     }
 
-    /**
-     * Initialize the dataset of the Adapter.
-     *
-     * @param dataSet String[] containing the data to populate views to be used
-     * by RecyclerView.
-     */
     public ItemListAdapter(ArrayList<HashMap<String, String>> cart) {
         this.cart = cart;
     }
@@ -74,7 +69,7 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ViewHo
         viewHolder.getNameView().setText(item.get("name"));
         viewHolder.getPriceView().setText(String.format("$%.2f",Double.parseDouble(item.get("price"))));
         viewHolder.getCountView().setText(item.get("count"));
-        viewHolder.setBackgroun(position%2==0? Color.WHITE:Color.LTGRAY);
+        viewHolder.setBackground(position%2==0 ? Color.WHITE:Color.LTGRAY);
 
     }
 
@@ -84,5 +79,5 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ViewHo
         return cart.size();
     }
 
-    private final ArrayList<HashMap<String, String>> cart;
+
 }
