@@ -17,6 +17,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
 
         Bundle extra = getIntent().getExtras();
         Merchandise item = (Merchandise)(extra.getSerializable("item"));
+        int count = extra.getInt("count");
         TextView txtName = this.findViewById(R.id.txtName);
         txtName.setText(item.getName());
 
@@ -24,10 +25,10 @@ public class ItemDetailsActivity extends AppCompatActivity {
         txtPrice.setText(String.format("$%.2f", item.getPrice()));
 
         TextView txtCount = this.findViewById(R.id.txtCount);
-        txtCount.setText(String.format("%d", extra.getInt("count")));
+        txtCount.setText(String.format("%d", count));
 
         TextView txtTotal = this.findViewById(R.id.txtTotal);
-        txtTotal.setText(String.format("%.2f", extra.getInt("count")*item.getPrice()));
+        txtTotal.setText(String.format("%.2f", count*item.getPrice()));
 
         ImageView image = this.findViewById(R.id.imgItem);
         image.setImageResource(item.getImageId());
