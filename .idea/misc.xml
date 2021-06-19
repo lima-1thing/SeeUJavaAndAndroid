@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="javacollectionclasses/src/main/res/layout/activity_main.xml" value="0.19934143870314083" />
+        <entry key="multiscreen/src/main/res/layout/activity_counter.xml" value="0.2682291666666667" />
+        <entry key="multiscreen/src/main/res/layout/activity_main.xml" value="0.2682291666666667" />
         <entry key="multiscreen2/src/main/res/layout/activity_main.xml" value="0.125" />
         <entry key="multiscreenapp/src/main/res/layout/activity_item_details.xml" value="0.25885416666666666" />
         <entry key="multiscreenapp/src/main/res/layout/activity_main.xml" value="0.1721014492753623" />

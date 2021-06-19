@@ -20,9 +20,10 @@
             <option value="$PROJECT_DIR$/diceanimated" />
             <option value="$PROJECT_DIR$/javacollectionclasses" />
             <option value="$PROJECT_DIR$/leapyear" />
-            <option value="$PROJECT_DIR$/multiscreenapp" />
+            <option value="$PROJECT_DIR$/multiscreen" />
             <option value="$PROJECT_DIR$/randomnumber" />
             <option value="$PROJECT_DIR$/shoppingcart1" />
+            <option value="$PROJECT_DIR$/shoppingcart2" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
