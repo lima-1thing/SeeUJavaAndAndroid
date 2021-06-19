@@ -1,11 +1,13 @@
-package com.example.shoppingcart1.items;
+package com.example.multiscreenapp.items;
 
-public class Merchandize {
+import java.io.Serializable;
+
+public class Merchandise implements Serializable {
     private final String name;
     private final int imageId;
     private final double price;
 
-    public Merchandize(String name, int imageId, double price) {
+    public Merchandise(String name, int imageId, double price) {
         this.name = name;
         this.imageId = imageId;
         this.price = price;

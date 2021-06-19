@@ -1,16 +1,24 @@
-package com.example.shoppingcart1.items;
+package com.example.multiscreenapp.items;
 
 import android.util.ArrayMap;
 
 import java.io.Serializable;
 
 public class ShoppingCart implements Serializable {
-    public void addItem(Merchandize item, int count){
+
+    private ShoppingCart() {
+
+    }
+    public void addItem(Merchandise item, int count){
         Integer c = items.get(item) == null ? 0: items.get(item);
         items.put(item, c+count);
     }
 
-    public void removeItem(Merchandize item){
+    static public  ShoppingCart getShoppingCart(){
+        return cart;
+    }
+
+    public void removeItem(Merchandise item){
         items.remove(item);
     }
 
@@ -22,7 +30,7 @@ public class ShoppingCart implements Serializable {
         return items.size();
     }
 
-    public Merchandize getItemAt(int index){
+    public Merchandise getItemAt(int index){
         return items.keyAt(index);
     }
 
@@ -30,5 +38,7 @@ public class ShoppingCart implements Serializable {
         return items.valueAt(index);
     }
 
-    private final ArrayMap<Merchandize, Integer> items = new ArrayMap<>();
+    private final ArrayMap<Merchandise, Integer> items = new ArrayMap<>();
+
+    static private ShoppingCart cart = new ShoppingCart();
 }

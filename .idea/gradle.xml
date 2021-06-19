@@ -7,7 +7,7 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="Android Studio default JDK" />
+        <option name="gradleJvm" value="jbr-11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -20,6 +20,7 @@
             <option value="$PROJECT_DIR$/diceanimated" />
             <option value="$PROJECT_DIR$/javacollectionclasses" />
             <option value="$PROJECT_DIR$/leapyear" />
+            <option value="$PROJECT_DIR$/multiscreenapp" />
             <option value="$PROJECT_DIR$/randomnumber" />
             <option value="$PROJECT_DIR$/shoppingcart1" />
           </set>

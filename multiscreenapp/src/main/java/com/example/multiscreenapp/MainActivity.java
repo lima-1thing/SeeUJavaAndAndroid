@@ -1,8 +1,7 @@
-package com.example.shoppingcart1;
+package com.example.multiscreenapp;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -11,12 +10,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.shoppingcart1.items.Apple;
-import com.example.shoppingcart1.items.Avacado;
-import com.example.shoppingcart1.items.Cheese;
-import com.example.shoppingcart1.items.Merchandize;
-import com.example.shoppingcart1.items.Milk;
-import com.example.shoppingcart1.items.ShoppingCart;
+import com.example.multiscreenapp.items.Apple;
+import com.example.multiscreenapp.items.Avacado;
+import com.example.multiscreenapp.items.Cheese;
+import com.example.multiscreenapp.items.Merchandise;
+import com.example.multiscreenapp.items.Milk;
+import com.example.multiscreenapp.items.ShoppingCart;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView itemListView = this.findViewById(R.id.itemList);
         itemListView.setLayoutManager(new LinearLayoutManager(this.getApplicationContext()));
 
-        this.adapter = new ItemListAdapter(this.cart);
+        this.adapter = new ItemListAdapter(ShoppingCart.getShoppingCart());
         itemListView.setAdapter(adapter);
 
 
@@ -38,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
 //        this.spin = (Spinner) findViewById(R.id.spinItems);
 //        spin.setAdapter(adapter);
 
-        Merchandize[] items = {new Apple(), new Cheese(), new Avacado(), new Milk(),
-                new Merchandize("Beef Jerkey", R.drawable.beefjerkey, 19.95),
-                new Merchandize("Egg", R.drawable.egg, 4.55),
-                new Merchandize("Bread", R.drawable.bread, 3.45),
-                new Merchandize("Butter", R.drawable.butter, 9.95)};
+        Merchandise[] items = {new Apple(), new Cheese(), new Avacado(), new Milk(),
+                new Merchandise("Beef Jerkey", R.drawable.beefjerkey, 19.95),
+                new Merchandise("Egg", R.drawable.egg, 4.55),
+                new Merchandise("Bread", R.drawable.bread, 3.45),
+                new Merchandise("Butter", R.drawable.butter, 9.95)};
         this.spin = (Spinner) findViewById(R.id.spinItems);
         ItemAdaptor adapter = new ItemAdaptor(this, R.layout.dropdown_item,
                 R.id.txtItem, items);
@@ -55,20 +54,20 @@ public class MainActivity extends AppCompatActivity {
     public void addNewItem(View view) {
         view.clearFocus();
 
-        Merchandize item = (Merchandize) this.spin.getSelectedItem();
+        Merchandise item = (Merchandise) this.spin.getSelectedItem();
         EditText txtCount = this.findViewById(R.id.txtCount);
 
-        this.cart.addItem(item, Integer.parseInt(txtCount.getText().toString()));
+        ShoppingCart.getShoppingCart().addItem(item, Integer.parseInt(txtCount.getText().toString()));
 
         this.updateTotal();
         this.adapter.notifyDataSetChanged();
     }
 
     public void deleteFirstItem(View view) {
-        if (this.cart.getNumItems() == 0) {
+        if (ShoppingCart.getShoppingCart().getNumItems() == 0) {
             return;
         }
-        this.cart.removeAt(0);
+        ShoppingCart.getShoppingCart().removeAt(0);
         this.updateTotal();
         this.adapter.notifyDataSetChanged();
     }
@@ -85,21 +84,13 @@ public class MainActivity extends AppCompatActivity {
 
     private double calcTotal() {
         double total = 0.0f;
-        for (int i = 0; i < this.cart.getNumItems(); i++) {
-            int count = this.cart.getCountAt(i);
-            double price = this.cart.getItemAt(i).getPrice();
+        for (int i = 0; i < ShoppingCart.getShoppingCart().getNumItems(); i++) {
+            int count = ShoppingCart.getShoppingCart().getCountAt(i);
+            double price = ShoppingCart.getShoppingCart().getItemAt(i).getPrice();
             total += count * price;
         }
 
         return total;
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
-
-        savedInstanceState.putSerializable("cart", this.cart);
-
-        super.onSaveInstanceState(savedInstanceState);
     }
 
     @Override
@@ -109,17 +100,15 @@ public class MainActivity extends AppCompatActivity {
 
         // Restore UI state from the savedInstanceState.
         // This bundle has also been passed to onCreate.
-        this.cart = (ShoppingCart) savedInstanceState.getSerializable("cart");
         this.updateTotal();
 
         RecyclerView itemListView = this.findViewById(R.id.itemList);
         itemListView.setLayoutManager(new LinearLayoutManager(this.getApplicationContext()));
 
-        this.adapter = new ItemListAdapter(this.cart);
+        this.adapter = new ItemListAdapter(ShoppingCart.getShoppingCart());
         itemListView.setAdapter(adapter);
     }
 
-    private ShoppingCart cart = new ShoppingCart();
     private ItemListAdapter adapter;
     private Spinner spin;
 }

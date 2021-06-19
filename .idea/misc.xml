@@ -4,6 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="javacollectionclasses/src/main/res/layout/activity_main.xml" value="0.19934143870314083" />
+        <entry key="multiscreen2/src/main/res/layout/activity_main.xml" value="0.125" />
+        <entry key="multiscreenapp/src/main/res/layout/activity_item_details.xml" value="0.25885416666666666" />
+        <entry key="multiscreenapp/src/main/res/layout/activity_main.xml" value="0.1721014492753623" />
+        <entry key="multiscreenapp/src/main/res/layout/item_details.xml" value="0.27291666666666664" />
+        <entry key="multiscreenapp/src/main/res/layout/item_layout.xml" value="0.31614583333333335" />
         <entry key="shoppingcart1/src/main/res/layout/activity_main.xml" value="0.375" />
         <entry key="shoppingcart1/src/main/res/layout/dropdown_item.xml" value="0.5457427536231884" />
         <entry key="shoppingcart1/src/main/res/layout/item_layout.xml" value="0.25407608695652173" />
