@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         this.spin = (Spinner) findViewById(R.id.spinItems);
         ItemAdaptor adapter = new ItemAdaptor(this, R.layout.dropdown_item,
                 R.id.txtItem, items);
-        adapter.setDropDownViewResource(R.layout.dropdown_item);
+        //adapter.setDropDownViewResource(R.layout.dropdown_item);
         spin.setAdapter(adapter);
 
 
