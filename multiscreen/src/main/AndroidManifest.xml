@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SeeUJavaAndAndroid">
         <activity
+            android:name=".CounterWithResultActivity"
+            android:exported="true" />
+        <activity
             android:name=".Counter"
             android:exported="true" />
         <activity
