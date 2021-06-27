@@ -58,4 +58,10 @@ public class MainActivity extends AppCompatActivity {
                 });
         alertDialogBuilder.create().show();
     }
+
+    public void onBorder(View view){
+
+        Intent intent = new Intent(this, BorderActivity.class);
+        startActivity(intent);
+    }
 }
