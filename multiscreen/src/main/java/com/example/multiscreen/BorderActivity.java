@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
@@ -37,7 +38,10 @@ public class BorderActivity extends AppCompatActivity {
                 params.setMargins(4,4,4,4);
                 txt.setLayoutParams(params);
                 txt.setBackgroundColor(WHITE);
-                txt.setText(String.format("%d x %d", i, j));
+                txt.setText(String.format("%02d", i*size + j));
+//                txt.setWidth(100);
+//                txt.setHeight(100);
+                txt.setGravity(Gravity.CENTER);
                 row.addView(txt);
             }
             layout.addView(row);
